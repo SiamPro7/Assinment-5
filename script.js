@@ -7,6 +7,7 @@ function renderHistory() {
 
   history.forEach((entry, index) => {
     const listItem = document.createElement("li");
+     listItem.classList.add("bg-white", "p-4", "rounded-lg", "shadow", "mb-4");
 
     listItem.innerHTML = `
       <strong>${index + 1}. ${entry.donatedAt}</strong><br>
@@ -65,7 +66,7 @@ donationButtonTwo.addEventListener("click", () => {
   totatAmount.innerText = `${balance}`;
 
   const historyObj = {
-    donatedAt: "Donate for Flood at Noakhali, Bangladesh",
+    donatedAt: "Donate for Flood Relief in Feni, Bangladesh",
     amount,
     date: new Date(),
   };
@@ -90,7 +91,7 @@ donationButtonThree.addEventListener("click", () => {
   totatAmount.innerText = `${balance}`;
 
   const historyObj = {
-    donatedAt: "Donate for Flood at Noakhali, Bangladesh",
+    donatedAt: "Aid for Injured in the Quota Movement",
     amount,
     date: new Date(),
   };
