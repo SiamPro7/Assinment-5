@@ -1,6 +1,7 @@
 let balance = 10000;
 const history = [];
 
+
 function renderHistory() {
   const historyList = document.getElementById("history-list");
   historyList.innerHTML = "";
@@ -10,7 +11,7 @@ function renderHistory() {
     listItem.classList.add("bg-white", "p-4", "rounded-lg", "shadow", "mb-4");
 
     listItem.innerHTML = `
-      <p><strong>${entry.amount} Taka</strong> is Donated for ${entry.cause}</p>
+      <p><strong>${entry.amount} Taka</strong> is Donated for ${entry.donatedAt}</p>
       <p class="text-gray-500 text-sm">Date: ${entry.date}</p>
     `;
 
@@ -24,12 +25,13 @@ const closeModalBtn = document.getElementById("close-modal");
 
 const totatAmount = document.getElementById("total-amount");
 totatAmount.innerText = `${balance}`;
-
+// card-1
 const donationBalanceOne = document.getElementById("donation-balance-one");
 const donateInputOne = document.getElementById("donation-input-1");
 const donationButtonOne = document.getElementById("first-donate-btn");
 
 donationButtonOne.addEventListener("click", () => {
+    
   const previous = parseFloat(donationBalanceOne.innerText);
   const amount = parseFloat(donateInputOne.value);
 
@@ -58,17 +60,27 @@ const donationBalanceTwo = document.getElementById("donation-balance-two");
 const donateInputTwo = document.getElementById("donation-input-2");
 const donationButtonTwo = document.getElementById("second-donate-btn");
 
+
 donationButtonTwo.addEventListener("click", () => {
+
+    
+
+     
+
   const amount = parseFloat(donateInputTwo.value);
   balance -= amount;
+   
+    
 
   donationBalanceTwo.innerText = `${amount}`;
   totatAmount.innerText = `${balance}`;
+  
 
   const historyObj = {
     donatedAt: "Donate for Flood Relief in Feni, Bangladesh",
     amount,
     date: new Date(),
+    
   };
   history.push(historyObj);
 
