@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Important FAQ</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-100">
+    <!-- Navigation -->
+    <nav
+      class="bg-white shadow p-4 flex justify-between items-center sticky top-0"
+    >
+      <button
+        id="blog-btn"
+        class="bg-green-500 text-lg font-semibold text-white px-4 py-2 rounded"
+      >
+        <a href="donait.html">Home</a>
+      </button>
+      <h1
+        class="flex justify-center items-center text-xl font-bold text-purple-500"
+      >
+        <img class="w-12 px-3" src="./assets/logo.png" alt="" />Donate
+        Bangladesh
+      </h1>
+
+      <div class="flex items-center text-yellow-500 font-bold">
+        <img class="px-2" src="./assets/coin.png" alt="" /><span
+          id="account-balance"
+          class="text-lg ml-1"
+          >5500 BDT
+        </span>
+      </div>
+    </nav>
+
+    <!-- FAQ Section -->
+    <section class="max-w-4xl mx-auto mt-10 bg-white p-6 rounded-lg shadow-lg space-y-8">
+      <h1 class="text-3xl font-bold mb-8 text-gray-800">
+        Important FAQ <span class="text-lime-600">?</span>
+      </h1>
+
+      <!-- FAQ Item 1 -->
+      <div class="mb-6">
+        <h2 class="text-xl font-semibold text-gray-700 mb-2">
+         1. What is the Document Object Model (DOM)?
+        </h2>
+      <p class=" font-semibold text-gray-700 mb-2">-The Document Object Model (DOM) is a programming interface for web documents.</p>
+      </div>
+
+      <!-- FAQ Item 2 -->
+      <div class="mb-6">
+        <h2 class="text-xl font-semibold text-gray-700 mb-2">
+          2.How do you select an element from the DOM?
+        </h2>
+       <p class=" font-semibold text-gray-700 mb-2">-To select an element from the DOM, use methods like getElementById('id') for a single element or querySelector('.class') for the first match. For multiple elements, use querySelectorAll('.class') or getElementsByClassName('class').</p>
+      </div>
+
+      <!-- FAQ Item 3 -->
+      <div class="mb-6">
+        <h2 class="text-xl font-semibold text-gray-700 mb-2">
+          3.What is event delegation in the context of the DOM, and why is it
+          useful?
+        </h2>
+        <p class=" font-semibold text-gray-700 mb-2">Event delegation is a technique in the DOM where a single event listener is attached to a parent element to handle events from its child elements. It leverages event bubbling (where events propagate up the DOM tree) and is useful because it reduces the number of event listeners, improves performance, and dynamically handles elements added later.</p>
+      </div>
+
+      <!-- FAQ Item 4 -->
+      <div class="mb-6">
+        <h2 class="text-xl font-semibold text-gray-700 mb-2">
+          4.How do you manipulate an element's attributes and styles using the
+          DOM?
+        </h2>
+       <p class=" font-semibold text-gray-700 mb-2">-To manipulate an element's attributes, use setAttribute() to change or add attributes and getAttribute() to retrieve them. For styles, access the style property and modify CSS properties directly.</p>
+      </div>
+    </section>
+  </body>
+</html>
