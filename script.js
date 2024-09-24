@@ -1,6 +1,20 @@
 let balance = 10000;
 const history = [];
 
+// Validation function to check donation input
+function validateDonation(amount, balance) {
+  if (isNaN(amount) || amount <= 0) {
+    alert("Please enter a valid donation amount.");
+    return false;
+  }
+
+  if (amount > balance) {
+    alert("You cannot donate more than your current balance.");
+    return false;
+  }
+
+  return true;
+}
 
 function renderHistory() {
   const historyList = document.getElementById("history-list");
@@ -31,10 +45,9 @@ const donateInputOne = document.getElementById("donation-input-1");
 const donationButtonOne = document.getElementById("first-donate-btn");
 
 donationButtonOne.addEventListener("click", () => {
-    
   const previous = parseFloat(donationBalanceOne.innerText);
   const amount = parseFloat(donateInputOne.value);
-
+  if (!validateDonation(amount, balance)) return; // Stop transaction if invalid
   const newTotal = previous + amount;
 
   balance -= amount;
@@ -60,27 +73,18 @@ const donationBalanceTwo = document.getElementById("donation-balance-two");
 const donateInputTwo = document.getElementById("donation-input-2");
 const donationButtonTwo = document.getElementById("second-donate-btn");
 
-
 donationButtonTwo.addEventListener("click", () => {
-
-    
-
-     
-
   const amount = parseFloat(donateInputTwo.value);
+   if (!validateDonation(amount, balance)) return;
   balance -= amount;
-   
-    
 
   donationBalanceTwo.innerText = `${amount}`;
   totatAmount.innerText = `${balance}`;
-  
 
   const historyObj = {
     donatedAt: "Donate for Flood Relief in Feni, Bangladesh",
     amount,
     date: new Date(),
-    
   };
   history.push(historyObj);
 
@@ -97,6 +101,7 @@ const donationButtonThree = document.getElementById("third-donate-btn");
 
 donationButtonThree.addEventListener("click", () => {
   const amount = parseFloat(donateInputThree.value);
+   if (!validateDonation(amount, balance)) return;
   balance -= amount;
 
   donationBalanceThree.innerText = `${amount}`;
