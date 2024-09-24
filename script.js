@@ -7,10 +7,9 @@ function renderHistory() {
 
   history.forEach((entry, index) => {
     const listItem = document.createElement("li");
-     listItem.classList.add("bg-white", "p-4", "rounded-lg", "shadow", "mb-4");
-     
-   
-         listItem.innerHTML = `
+    listItem.classList.add("bg-white", "p-4", "rounded-lg", "shadow", "mb-4");
+
+    listItem.innerHTML = `
       <p><strong>${entry.amount} Taka</strong> is Donated for ${entry.cause}</p>
       <p class="text-gray-500 text-sm">Date: ${entry.date}</p>
     `;
@@ -112,27 +111,27 @@ const historySection = document.getElementById("history-section");
 const historyButton = document.getElementById("history-btn");
 
 donationButton.addEventListener("click", () => {
-  
+  // Toggle sections visibility
   donationSection.classList.remove("hidden");
   historySection.classList.add("hidden");
 
-  
+  // Update donation button styles
   donationButton.classList.add("bg-green-500", "text-white");
 
-  
+  // Update history button styles
   historyButton.classList.remove("bg-green-500", "text-white");
   historyButton.classList.add("text-green-500", "border-green-500", "border-2");
 });
 
 historyButton.addEventListener("click", () => {
- y
+  // Toggle sections visibility
   donationSection.classList.add("hidden");
   historySection.classList.remove("hidden");
 
-  
+  // Update history button styles
   historyButton.classList.add("bg-green-500", "text-white");
 
- 
+  // Update donation button styles
   donationButton.classList.remove("bg-green-500", "text-white");
   donationButton.classList.add(
     "text-green-500",
